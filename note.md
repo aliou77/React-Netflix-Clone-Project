@@ -34,7 +34,10 @@ class HelloMessage extends React.Component {
 }
 root.render(React.createElement(HelloMessage, { name: "Thierry" }));
 
+------------------------------------------------------------------
 
+## Utilisation de React dans index.js
+<Hello name="adramane" /> => 'Hello' represente le nom de la fonction | la class exporter
 
 
 

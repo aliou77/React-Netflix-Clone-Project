@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import {default as App, Hello, Button} from './Introduction';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <App name="aliou" />
+    <Hello name="adramane" />
+    <Button name="Envoyer" />
   </React.StrictMode>
 );
 

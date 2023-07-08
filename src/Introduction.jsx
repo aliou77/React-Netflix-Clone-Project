@@ -1,7 +1,7 @@
 // import logo from './logo.svg'; // variable contenant une image
 import './App.css';
 
-function App(props) {
+function Intro(props) {
   return (
     <div className="App">
       <h1>Bonjour {props.name} </h1>

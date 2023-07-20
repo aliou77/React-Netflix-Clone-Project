@@ -1,11 +1,16 @@
 import React from 'react';
-
+import styled from 'styled-components';
 const Signup = () => {
     return (
-        <div>
+        <Container>
             <h1>Signup page</h1>
-        </div>
+        </Container>
     );
 }
 
 export default Signup;
+
+const Container = styled.div`
+    background: red;
+    padding: 20px;
+`;

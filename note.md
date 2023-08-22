@@ -5,7 +5,7 @@
 --------------------------------------------------------------------
 
 ## Commands
-- yarn build -> build tous les fichiers de l'app qui seront utiliser pour le deployement de l'app apres avoir fini sa consection.
+- yarn build -> build tous les fichiers de l'app qui seront utiliser pour le deployement de l'app apres avoir fini sa consception.
 
 --------------------------------------------------------------------
 
@@ -39,6 +39,8 @@ root.render(React.createElement(HelloMessage, { name: "Thierry" }));
 ## Utilisation de React dans index.js
 <Hello name="adramane" /> => 'Hello' represente le nom de la fonction | la class exporter
 
+------------------------------------------------------------------
+## configuration de firebase
 
 
 

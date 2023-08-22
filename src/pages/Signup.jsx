@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Signup = () => {
     return (
         <Container>
-            <h1>Signup page</h1>
+            <h1 className='text-6xl text-red-700'>Signup page</h1>
         </Container>
     );
 }

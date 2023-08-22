@@ -4,10 +4,10 @@ import { styled } from 'styled-components';
 
 const Home = () => {
     return (
-        
+
         <Container>
             <Background />
-            <h1>Home page</h1>
+            <h1 className=''>Home page</h1>
         </Container>
     );
 }

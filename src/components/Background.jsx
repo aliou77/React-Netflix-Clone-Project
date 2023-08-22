@@ -5,7 +5,7 @@ import { styled } from 'styled-components'
 export default function Background() {
   return (
     <Container>
-        <img src={image} alt="bacground" />
+      <img src={image} alt="bacground-img" />
     </Container>
   )
 }

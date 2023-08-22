@@ -40,6 +40,10 @@ root.render(React.createElement(HelloMessage, { name: "Thierry" }));
 <Hello name="adramane" /> => 'Hello' represente le nom de la fonction | la class exporter
 
 ------------------------------------------------------------------
+## configuration de tailwind
+NB: si l'installation par defaut de tailwind ne fonctionne pas, reinstaller tailwind ou passer par l'ancien methode avec la creation de fichier input et ouput.
+
+------------------------------------------------------------------
 ## configuration de firebase
 
 

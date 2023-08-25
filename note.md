@@ -37,7 +37,14 @@ root.render(React.createElement(HelloMessage, { name: "Thierry" }));
 ------------------------------------------------------------------
 
 ## Utilisation de React dans index.js
+NB: <props> permet de recuperer les proprieter utiliser dans un element
+const Hello = (props)=>{
+  retrun <div>
+    <p>{props.name}</p> // => affiche la propertie creer dans l'element <Helllo />
+    </div>;
+}
 <Hello name="adramane" /> => 'Hello' represente le nom de la fonction | la class exporter
+
 
 ------------------------------------------------------------------
 ## configuration de tailwind
@@ -48,9 +55,18 @@ NB: si l'installation par defaut de tailwind ne fonctionne pas, reinstaller tail
 
 
 
+------------------------------------------------------------------
+## les evenements
+pour utiliser les events sur React on passe par les proprieter par defaut ex:
+<button onClick={sendAjaxForm()}>valider</button>
+// ou dans un objet
+<button onClick={this.sendAjaxForm.bind(this)}>valider</button>
 
-
-
+------------------------------------------------------------------
+## les HOOKS
+les hooks est une serie de functions qui commence par <use>, utilisant une API. ils permettent d'ajouter des fonctionnalites qui sont ratacher a l'etat et au cycle de vie de notre composant.
+- useState(): est un hook qui permet de manipuler l'etat d'un element le <props.state> pr exemple modifier la veuleur du compteur.
+# NB: UN useState() ne peut pas etre utiliser dans une condition ou une boucle si non cela va changer l'ordre des appelles des functions et alterer le functionnement des hooks. <rappel sur la PILLE d'execution des function par JS>
 
 
 

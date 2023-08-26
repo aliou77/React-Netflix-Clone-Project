@@ -2,3 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.input-home{
+    @apply h-[3.5rem] w-full rounded-md border border-white ps-3 bg-[#0000007d];
+}
+#form-home input::placeholder{
+    color: #ffffffb3;
+    font-weight: 600;
+}

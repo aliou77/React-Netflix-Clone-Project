@@ -5,7 +5,14 @@
 .input-home{
     @apply h-[3.5rem] w-full rounded-md border border-white ps-3 bg-[#0000007d];
 }
+.input-form{
+    @apply w-full border border-black rounded-[5px];
+    padding: 1.25rem 1rem 0.25rem;
+}
 #form-home input::placeholder{
     color: #ffffffb3;
     font-weight: 600;
+}
+#regform label.active{
+    @apply text-sm top-0 cursor-default;
 }

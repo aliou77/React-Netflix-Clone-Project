@@ -68,6 +68,14 @@ les hooks est une serie de functions qui commence par <use>, utilisant une API. 
 - useState(): est un hook qui permet de manipuler l'etat d'un element le <props.state> pr exemple modifier la veuleur du compteur.
 # NB: UN useState() ne peut pas etre utiliser dans une condition ou une boucle si non cela va changer l'ordre des appelles des functions et alterer le functionnement des hooks. <rappel sur la PILLE d'execution des function par JS>
 
+------------------------------------------------------------------
+## TASKS:
+- create a function to set a cookie and send the email throgth it
+
+------------------------------------------------------------------
+-- sur bahwai
+- regler l'ajout des produit dans le panier avec l'ajax dans le panier
+- dans la page produit remplacer la partie static
 
 
 

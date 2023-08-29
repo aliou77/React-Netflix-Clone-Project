@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 window.onclick = (event) => {
     if (document.querySelector('#form-home input')) {
-        if (event.target.matches('#form-home input') != true) {
+        if (event.target.matches('#form-home input') !== true) {
             document.querySelector('#form-home input').placeholder = 'Email address'
             document.querySelector('#form-home input').style.paddingTop = '0'
             document.querySelector('#form-home span').style.display = 'none'
@@ -26,6 +26,7 @@ export default function Home() {
 
     const handleSubmitEmail = (e) => {
         e.preventDefault()
+        // console.log(emailValue);
         navigate('/signup/regform')
     }
     return (

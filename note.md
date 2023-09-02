@@ -72,10 +72,6 @@ les hooks est une serie de functions qui commence par <use>, utilisant une API. 
 ## TASKS:
 - create a function to set a cookie and send the email throgth it
 
-------------------------------------------------------------------
--- sur bahwai
-- regler l'ajout des produit dans le panier avec l'ajax dans le panier
-- dans la page produit remplacer la partie static
 
 
 

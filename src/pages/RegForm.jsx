@@ -3,41 +3,69 @@ import { useNavigate } from 'react-router-dom';
 import { styled } from 'styled-components'
 import logo from '../assets/logo.svg'
 import jQuery from "jquery";
-
+import { deleteCookie, getCookie, goodEmail, setCookie } from '../utils/functions';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { firebaseAuth } from '../utils/firebase-config';
 const $ = jQuery;
 
-$('#regform .form-item').each((i, item) => {
-    $(item).find('input').on('focusin', function () {
-        $(this).prev().addClass('active')
-    })
-    $(item).find('input').on('focusout', function () {
-        if ($(this).val() === '') {
-            $(this).prev().removeClass('active')
+const email = getCookie('user_email')
+
+$(document).ready(() => {
+    // NB: somme element can't be selected in the DOM before everything is loaded
+    if (email !== null) {
+        console.log(document.querySelector('#regform input[type="email"]'));
+        if (document.querySelector('#regform input[type="email"]') !== null) {
+            document.querySelector('#regform input[type="email"]').focus()
         }
-    })
+    }
+    $('#regform .form-item').each((i, item) => {
+        let input = $(item).find('input')
+        if (input.val() !== '') {
+            input.prev().addClass('active')
+        }
+        input.on('focusin', function () {
+            $(this).prev().addClass('active')
+        })
+        input.on('focusout', function () {
+            if ($(this).val() === '') {
+                $(this).prev().removeClass('active')
+            }
+        })
+    });
 })
-
-// 
-const checkFrom = () => {
-
-
-    return true;
-}
 
 
 
 export default function RegForm(props) {
     const navigate = useNavigate()
     const [stateValue, setStateValue] = useState({
-        email: "",
+        email: email !== null ? email : "",
         password: ""
     })
+
+    // check value filled by user
+    const checkFrom = async (form) => {
+        if (goodEmail(stateValue.email)) {
+            const { email, password } = stateValue
+            await createUserWithEmailAndPassword(firebaseAuth, email, password)
+                .then(({ user }) => {
+                    deleteCookie('user_email', '/')
+                    window.location.href = '/'
+                })
+                .catch((er) => console.log(er))
+
+        } else {
+            $(form).find('input[type="email"]')
+                .css('border-color', 'red')
+                .css('outline-color', 'red')
+        }
+    }
 
     function handleSubmitForm(e) {
         e.preventDefault()
         // verify if inputs are correctelly filled up before sedding data to the firebase api.
-        checkFrom()
-        console.log(stateValue);
+        checkFrom(e.target)
+        // console.log(stateValue);
     }
 
     return (
@@ -56,7 +84,7 @@ export default function RegForm(props) {
                     </div>
                 </div>
             </div>
-            <div className="form text-[#333] max-w-[440px] w-full sm:mx-auto mx-6">
+            <div className="form text-[#333] max-w-[440px] w-full sm:mx-auto mx-6 mb-16">
                 <h1 className='font-bold sm:text-[32px] text-2xl mt-12 mb-4 leading-[2.5rem]'>Create a password to start your membership</h1>
                 <p className='text-lg mt-[10px] leading-[20px] mb-4'>Just one more step and you're done!
                     We hate paperwork, too.</p>

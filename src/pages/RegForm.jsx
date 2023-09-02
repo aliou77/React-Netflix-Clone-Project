@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { styled } from 'styled-components'
 import logo from '../assets/logo.svg'
 import jQuery from "jquery";
-import { deleteCookie, getCookie, goodEmail, setCookie } from '../utils/functions';
+import { deleteCookie, getCookie, goodEmail } from '../utils/functions';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { firebaseAuth } from '../utils/firebase-config';
 const $ = jQuery;

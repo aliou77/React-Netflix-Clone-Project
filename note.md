@@ -70,7 +70,7 @@ les hooks est une serie de functions qui commence par <use>, utilisant une API. 
 
 ------------------------------------------------------------------
 ## TASKS:
-- create a function to set a cookie and send the email throgth it
+- add feat if creadentials doesn't match when login
 
 
 

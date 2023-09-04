@@ -4,7 +4,7 @@ import { styled } from 'styled-components'
 import logo from '../assets/logo.svg'
 import jQuery from "jquery";
 import { deleteCookie, getCookie, goodEmail } from '../utils/functions';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
 import { firebaseAuth } from '../utils/firebase-config';
 const $ = jQuery;
 
@@ -13,7 +13,6 @@ const email = getCookie('user_email')
 $(document).ready(() => {
     // NB: somme element can't be selected in the DOM before everything is loaded
     if (email !== null) {
-        console.log(document.querySelector('#regform input[type="email"]'));
         if (document.querySelector('#regform input[type="email"]') !== null) {
             document.querySelector('#regform input[type="email"]').focus()
         }
@@ -47,6 +46,7 @@ export default function RegForm(props) {
     const checkFrom = async (form) => {
         if (goodEmail(stateValue.email)) {
             const { email, password } = stateValue
+            // creating user to the firebase database
             await createUserWithEmailAndPassword(firebaseAuth, email, password)
                 .then(({ user }) => {
                     deleteCookie('user_email', '/')
@@ -67,6 +67,8 @@ export default function RegForm(props) {
         checkFrom(e.target)
         // console.log(stateValue);
     }
+
+
 
     return (
         <Container>

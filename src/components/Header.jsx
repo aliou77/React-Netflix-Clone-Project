@@ -11,8 +11,8 @@ export default function Header(props) {
                     <a href="/"><img className='w-[148px]' src={logo} alt="logo Netflix" /></a>
                 </div>
                 <div>
-                    <span onClick={() => navigate(props.login ? "/login" : "/signup")} className="cursor-pointer font-bold text-white text-sm px-4 py-2 bg-main_color rounded-md">
-                        {props.login ? "Log In" : "Sign In"}
+                    <span onClick={() => navigate("/login")} className="cursor-pointer font-bold text-white text-sm px-4 py-2 bg-main_color rounded-md">
+                        Sign In
                     </span>
                 </div>
             </div>

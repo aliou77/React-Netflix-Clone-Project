@@ -13,6 +13,18 @@
     color: #ffffffb3;
     font-weight: 600;
 }
-#regform label.active{
+#regform label.active, #login-form label.active{
     @apply text-sm top-0 cursor-default;
 }
+
+@media screen and (min-width: 1440px){
+    .desktop-width{
+        max-width: 1440px;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+ .bg-gradient{
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
+  }

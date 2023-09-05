@@ -52,7 +52,9 @@ export default function RegForm(props) {
                     deleteCookie('user_email', '/')
                     window.location.href = '/'
                 })
-                .catch((er) => console.log(er))
+                .catch((er) => {
+                    $('#error-signup').text(er.message).fadeIn(0)
+                })
 
         } else {
             $(form).find('input[type="email"]')
@@ -110,6 +112,7 @@ export default function RegForm(props) {
                         <label htmlFor="check" className="font-semibold">Please do not email me Netflix special offers.</label>
                     </div>
                     <button type='submit' className='px-[48px] py-[20px] mt-4 bg-main_color text-white font-semibold sm:text-[22px] text-xl rounded-[5px]'>Sign Up</button>
+                    <div id="error-signup" className="hidden mt-4 text-main_color text-center"></div>
                 </form>
             </div>
         </Container>

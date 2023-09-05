@@ -44,7 +44,9 @@ const Login = () => {
             .then((resp) => {
                 window.location.href = '/'
             })
-            .catch((er) => console.log(er))
+            .catch((er) => {
+                $('#error-login').text(er.message).fadeIn(0)
+            })
         // gotta define feat if creadentianls don't match
 
     }
@@ -87,6 +89,7 @@ const Login = () => {
                             <input type="checkbox" className='' id='check' />
                             <label htmlFor="check" className="font-semibold text-[#b3b3b3] text-sm">Remember me</label>
                         </div>
+                        <div id="error-login" className="hidden mt-4 text-main_color text-center"></div>
                     </form>
                     <div className="w-full text-[#8c8c8c] mt-4">
                         <p>New to Netflix? <a href="/signup" className='text-white hover:underline'>Sign up now.</a></p>

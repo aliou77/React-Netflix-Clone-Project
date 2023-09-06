@@ -68,13 +68,16 @@ les hooks est une serie de functions qui commence par <use>, utilisant une API. 
 - useState(): est un hook qui permet de manipuler l'etat d'un element le <props.state> pr exemple modifier la veuleur du compteur.
 # NB: UN useState() ne peut pas etre utiliser dans une condition ou une boucle si non cela va changer l'ordre des appelles des functions et alterer le functionnement des hooks. <rappel sur la PILLE d'execution des function par JS>
 
+---
+# HOOK useEffect():
+il prend en param une function qu'il rexecute lorsqu'il ya un etat de l'application qui change
+ex: pour mon code Jquery pour le <input> et le <label> lorsque j'utilise le useNavigate() le code jQuery n'est pas rexecuter sur les autre pages pour remedier au probleme on utilise le hook <useEffect()> qui reexecute le code pour ns a chanque changement d'etat.
+# NB: il prend un 2em param qui un array qui contient les dependences: ce sont les elements que le hook va observer et qui va reexecuter la function en param lorsque ces elements change d'etat.
+
 ------------------------------------------------------------------
 ## TASKS:
 - add feat if creadentials doesn't match when login
-
-
-
-
+- add feat to handle errors messages
 
 
 

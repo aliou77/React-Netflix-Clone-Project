@@ -12,7 +12,7 @@ export default function Background() {
 
 const Container = styled.div`
   img{
-    height: 100vh;
+    height: 110vh;
     width: 100vw;
   }
 `;

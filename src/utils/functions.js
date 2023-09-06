@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 /**
  * 
  * @param {string} name the name of the cookie
@@ -34,8 +36,23 @@ export const deleteCookie = (name, path) => {
     document.cookie = `${name}=''; expires=${date.toUTCString()};path=${path}`;
 }
 
-
+/**
+ * 
+ * @param {String} value the email will be check 
+ * @returns 
+ */
 export const goodEmail = (value) => {
     var regex = new RegExp('[A-Za-z0-9]+@(gmail|yahoo)\.(com|fr)', 'gim'); // c'est lui qui ajout les slash (/[]/)
     return regex.test(value)
+}
+
+/**
+ * this personalised hook will execute the JQuery code just once 
+ */
+/**
+ * 
+ * @param {*} callback callback which will reexecuted
+ */
+export const useReloadCode = (callback) => {
+    useEffect(() => callback(), [])
 }

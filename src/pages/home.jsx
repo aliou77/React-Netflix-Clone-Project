@@ -11,6 +11,10 @@ import { firebaseAuth } from '../utils/firebase-config';
 const Home = () => {
     const navigate = useNavigate()
 
+    onAuthStateChanged(firebaseAuth, (currentUser) => {
+        // if user is not loged in, redirect him to the login page
+        if (!currentUser) navigate('/login')
+    })
 
     return (
         <Container>

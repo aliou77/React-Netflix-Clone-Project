@@ -4,7 +4,6 @@ import { styled } from 'styled-components';
 import Header from '../components/Header';
 import { goodEmail, setCookie } from '../utils/functions';
 import jQuery from "jquery";
-import { onAuthStateChanged } from 'firebase/auth';
 import { firebaseAuth } from '../utils/firebase-config';
 import { useNavigate } from 'react-router-dom';
 
@@ -36,7 +35,7 @@ export default function Signup() {
         // console.log(emailValue);
         if (goodEmail(emailValue.email)) {
             setCookie('user_email', emailValue.email)
-            document.location.href = '/signup/regform'
+            navigate('/signup/regform')
         } else {
             $('#form-home input[type="email"]')
                 .css('border-color', 'red')
@@ -49,7 +48,7 @@ export default function Signup() {
 
         <Container>
             <Background />
-            <div className='bg-gradient absolute top-0 w-full h-screen desktop-width'>
+            <div className='bg-gradient absolute top-0 w-full h-[110vh] desktop-width'>
                 <div className="w-full sm:mx-0 px-[20px]">
                     <Header />
                     <div className="flex flex-col items-center gap-4 text-white mt-[10.5rem] tracking-tighter">

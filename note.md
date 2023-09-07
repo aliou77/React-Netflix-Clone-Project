@@ -80,8 +80,8 @@ ex: pour mon code Jquery pour le <input> et le <label> lorsque j'utilise le useN
 - add feat to handle errors messages
 
 
-
-
+------------------------------------------------------------------
+# NB: add style and animation on elements when you finished to setting up website feat MongoDB, firebase .... 
 
 
 

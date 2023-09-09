@@ -3,15 +3,33 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { firebaseAuth } from '../utils/firebase-config';
 import Navbar from '../components/Navbar';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import hero from '../assets/hero.jpg'
 import { FaPlay } from 'react-icons/fa6'
 import { AiOutlineInfoCircle } from 'react-icons/ai'
+import Footer from '../components/Footer';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchMovies, fetchGenres } from '../store';
 
 
 const Home = () => {
     const navigate = useNavigate()
     const [isScrolled, setIsScrolled] = useState(false)
+    const dispatch = useDispatch()
+    const genresLoaded = useSelector((state) => state.netflix.genresLoaded)
+    const movies = useSelector((state) => state.netflix.movies)
+    console.log(movies);
+    useEffect(() => {
+        dispatch(fetchGenres())
+    }, [])
+
+    useEffect(() => {
+        // when genres fetched then we fetch all movies via genres fetched with fetchGenres() function
+        if (genresLoaded) {
+            dispatch(fetchMovies({ type: "all" }))
+        }
+    }, [genresLoaded])
+
 
     onAuthStateChanged(firebaseAuth, (currentUser) => {
         // if user is not loged in, redirect him to the login page
@@ -32,17 +50,18 @@ const Home = () => {
                     <img src={hero} alt="Hero image" className='w-screen h-screen ' />
                 </div>
                 <div className="container absolute bottom-[5rem] ms-[5rem]">
-                    <h1 className='text-[5rem] text-white mb-2'>MY NAME</h1>
+                    <h1 className='text-[5rem] text-white mb-2 font-extrabold'>MY NAME</h1>
                     <div className="buttons flex items-center gap-8">
-                        <button className='flex items-center gap-4 bg-white'>
+                        <button className='flex items-center gap-[10px] bg-white' onClick={() => navigate('/player')}>
                             <FaPlay /> <span>Play</span>
                         </button>
-                        <button className='flex items-center gap-4 bg-[#7571718c] text-white'>
+                        <button className='flex items-center gap-[10px] bg-[#7571718c] text-white'>
                             <AiOutlineInfoCircle /> <span>More info</span>
                         </button>
                     </div>
                 </div>
             </div>
+            <Footer />
         </Container>
     );
 }
@@ -62,7 +81,7 @@ const Container = styled.div`
     .buttons button{
         border: 1px solid transparent;
         border-radius: 5px;
-        padding: 3px 25px;
+        padding: 3px 17px;
         font-size: 23px;
         cursor: pointer;
         transition: opaicty .3s;

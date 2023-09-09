@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
 import Background from '../components/Background';
-import { useNavigate } from 'react-router-dom';
 import { styled } from 'styled-components';
 import logo from '../assets/logo.svg'
 import jQuery from 'jquery';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { firebaseAuth } from '../utils/firebase-config';
 import { useReloadCode } from '../utils/functions';
+import { useState } from 'react';
+import Footer from '../components/Footer';
 const $ = jQuery;
 
 const codeJq = () => {
@@ -107,6 +107,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </Container>
     );
 }

@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from 'react'
-import { Navigate, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { styled } from 'styled-components'
 import logo from '../assets/logo.svg'
 import jQuery from "jquery";
 import { deleteCookie, getCookie, goodEmail, useReloadCode } from '../utils/functions';
-import { createUserWithEmailAndPassword, onAuthStateChanged, signOut } from 'firebase/auth';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { firebaseAuth } from '../utils/firebase-config';
+import Footer from '../components/Footer';
 const $ = jQuery;
 
 const email = getCookie('user_email')
 
 const codeJq = () => {
-    console.log("again");
     $(document).ready(() => {
 
         $('#regform .form-item').each((i, item) => {
@@ -120,6 +120,7 @@ export default function RegForm(props) {
                     <button type='submit' className='px-[48px] py-[20px] mt-4 bg-main_color text-white font-semibold sm:text-[22px] text-xl rounded-[5px]'>Sign Up</button>
                 </form>
             </div>
+            <Footer />
         </Container>
     )
 }

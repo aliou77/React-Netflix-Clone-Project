@@ -4,8 +4,8 @@ import { styled } from 'styled-components';
 import Header from '../components/Header';
 import { goodEmail, setCookie } from '../utils/functions';
 import jQuery from "jquery";
-import { firebaseAuth } from '../utils/firebase-config';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../components/Footer';
 
 const $ = jQuery;
 window.onclick = (event) => {
@@ -75,6 +75,7 @@ export default function Signup() {
 
                 </div>
             </div>
+            <Footer />
         </Container>
 
     );

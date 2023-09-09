@@ -75,9 +75,15 @@ ex: pour mon code Jquery pour le <input> et le <label> lorsque j'utilise le useN
 # NB: il prend un 2em param qui un array qui contient les dependences: ce sont les elements que le hook va observer et qui va reexecuter la function en param lorsque ces elements change d'etat.
 
 ------------------------------------------------------------------
+# REDUX TOOLKIT
+est un environement dans le quel nous allons stocker nos donnees, pour pouvoir les acceder partout dans notre application, Redux est generalement utiliser dans les framwork comme <React>.
+
+- Ici dans notre APP de clone Netflix nous allons utiliser <Redux> pour y stocker les films recuperer depuis l'API api.themoviesdb et ainsi pouvoir les manipuler.
+
+------------------------------------------------------------------
 ## TASKS:
-- add feat if creadentials doesn't match when login
-- add feat to handle errors messages
+- comprehend what redux works out and console.log() all elements to understand wtf going on.
+- design carousels to display movies.
 
 
 ------------------------------------------------------------------

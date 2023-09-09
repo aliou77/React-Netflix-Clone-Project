@@ -4,13 +4,16 @@ import './index.css';
 // import {default as App, Hello, Button} from './Introduction';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Footer from './components/Footer';
+import { store } from './store';
+import { Provider } from 'react-redux';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
-    <Footer />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 

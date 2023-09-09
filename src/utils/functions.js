@@ -42,7 +42,7 @@ export const deleteCookie = (name, path) => {
  * @returns 
  */
 export const goodEmail = (value) => {
-    var regex = new RegExp('[A-Za-z0-9]+@(gmail|yahoo)\.(com|fr)', 'gim'); // c'est lui qui ajout les slash (/[]/)
+    var regex = new RegExp('[A-Za-z0-9]+@(gmail|yahoo).(com|fr)', 'gim'); // c'est lui qui ajout les slash (/[]/)
     return regex.test(value)
 }
 

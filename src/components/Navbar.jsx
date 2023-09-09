@@ -2,10 +2,9 @@ import React, { useState } from 'react'
 import logo from '../assets/logo.svg'
 import { styled } from 'styled-components'
 import { Link } from 'react-router-dom'
-import { FaSearch, FaSearchPlus, FaSearchengin, FaSignOutAlt, FaXbox } from 'react-icons/fa'
+import { FaSearch, FaSignOutAlt } from 'react-icons/fa'
 import { signOut } from 'firebase/auth'
 import { firebaseAuth } from '../utils/firebase-config'
-import jQuery from 'jquery'
 
 const links = [
     { name: "Home", link: "/" },
@@ -23,7 +22,7 @@ export default function Navbar({ isScrolled }) {
     return (
         <Container>
             <nav className='w-full'>
-                <div className={`${isScrolled ? "bg-black" : ""} fixed top-0 w-full content-nav flex text-white p-[25px]`}>
+                <div className={`${isScrolled ? "bg-black" : ""} fixed top-0 w-full content-nav flex text-white p-[25px] z-50`}>
                     <div className="left flex gap-12 items-center w-full">
                         <div className="img">
                             <a href="/"><img src={logo} className='w-[140px]' alt="logo netflix" /></a>

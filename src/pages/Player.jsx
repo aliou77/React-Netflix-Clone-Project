@@ -1,21 +1,19 @@
 import React from 'react'
-import video from '../assets/My Name - Official Trailer - Netflix.mkv'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { BsArrowLeft } from 'react-icons/bs'
+import Video from '../components/Video'
 
 export default function Player() {
     const navigate = useNavigate()
 
     return (
         <Container>
-            <div className='content w-screen h-screen'>
+            <div className='w-screen h-screen content'>
                 <div className="back">
                     <BsArrowLeft onClick={() => navigate(-1)} />
                 </div>
-                <div className="video">
-                    <video src={video} autoPlay loop controls ></video>
-                </div>
+                <Video/>
             </div>
         </Container>
     )

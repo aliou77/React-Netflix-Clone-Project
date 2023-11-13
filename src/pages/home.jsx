@@ -10,6 +10,7 @@ import { AiOutlineInfoCircle } from 'react-icons/ai'
 import Footer from '../components/Footer';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMovies, fetchGenres } from '../store';
+import Slider from '../components/Slider';
 
 
 const Home = () => {
@@ -18,7 +19,7 @@ const Home = () => {
     const dispatch = useDispatch()
     const genresLoaded = useSelector((state) => state.netflix.genresLoaded)
     const movies = useSelector((state) => state.netflix.movies)
-    console.log(movies);
+    
     useEffect(() => {
         dispatch(fetchGenres())
     }, [])
@@ -45,13 +46,13 @@ const Home = () => {
     return (
         <Container>
             <Navbar isScrolled={isScrolled} />
-            <div className="hero relative">
-                <div className="bg-home w-full">
+            <div className="relative hero">
+                <div className="w-full bg-home">
                     <img src={hero} alt="Hero image" className='w-screen h-screen ' />
                 </div>
                 <div className="container absolute bottom-[5rem] ms-[5rem]">
-                    <h1 className='text-[5rem] text-white mb-2 font-extrabold'>MY NAME</h1>
-                    <div className="buttons flex items-center gap-8">
+                    <h1 className='h1_trailler text-[5rem] text-white mb-2 font-extrabold'>MY NAME</h1>
+                    <div className="flex items-center gap-8 buttons">
                         <button className='flex items-center gap-[10px] bg-white' onClick={() => navigate('/player')}>
                             <FaPlay /> <span>Play</span>
                         </button>
@@ -61,6 +62,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            <Slider movies={movies}/>
             <Footer />
         </Container>
     );
@@ -70,7 +72,7 @@ export default Home;
 
 const Container = styled.div`
     background-color: black;
-    h1{
+    h1.h1_trailler{
         font-family: 'Josefin Sans', sans-serif;
         line-height: 1;
         letter-spacing: -7px;

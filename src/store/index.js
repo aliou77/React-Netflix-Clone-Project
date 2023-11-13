@@ -46,6 +46,7 @@ const getRawData = async (api, { genres }, pagging) => {
     for (let i = 1; moviesArray.length < 60 && i < 11; i++) {
         const { results } = await fetch(`${api}${pagging ? `&page=${i}` : ""}`, options).then(res => res.json())
         createArrayFormRawData(results, moviesArray, genres)
+        // console.log(results)
         return moviesArray;
     }
 

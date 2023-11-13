@@ -82,7 +82,6 @@ est un environement dans le quel nous allons stocker nos donnees, pour pouvoir l
 
 ------------------------------------------------------------------
 ## TASKS:
-- comprehend what redux works out and console.log() all elements to understand wtf going on.
 - design carousels to display movies.
 
 

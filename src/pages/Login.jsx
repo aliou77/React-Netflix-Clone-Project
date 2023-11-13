@@ -66,7 +66,7 @@ const Login = () => {
         <Container>
             <Background></Background>
             <div className="bg-gradient absolute top-0 w-full h-[110vh] desktop-width">
-                <div className="flex justify-between items-center m-6">
+                <div className="flex items-center justify-between m-6">
                     <div>
                         <a href="/"><img className='w-[148px]' src={logo} alt="logo Netflix" /></a>
                     </div>
@@ -79,7 +79,7 @@ const Login = () => {
                     <div id="error-login" className="hidden mb-[10px] text-main_color text-center"></div>
 
                     <form action="#" onSubmit={handleFormLogin} id='login-form' method="post" className='text-[#333] w-full flex flex-col gap-3'>
-                        <div className="form-item relative">
+                        <div className="relative form-item">
                             <label htmlFor="email" className='active absolute top-3 ps-4 text-lg cursor-text text-[#8c8c8c]'>Email or Phone numer</label>
                             <input type="email" aria-autocomplete='email' autoFocus required id='email' name='email' className='input-form bg-[#333] !text-[#8c8c8c]'
                                 value={stateValue.email || ''}
@@ -88,7 +88,7 @@ const Login = () => {
                                 }}
                             />
                         </div>
-                        <div className="form-item relative">
+                        <div className="relative form-item">
                             <label htmlFor="password" className='absolute top-3 ps-4 text-lg cursor-text text-[#8c8c8c]'>Password</label>
                             <input type="password" required id='password' name='password' className='input-form bg-[#333] !text-[#8c8c8c]'
                                 value={stateValue.password}
@@ -96,7 +96,7 @@ const Login = () => {
                                     setStateValue({ ...stateValue, password: e.target.value })
                                 }} />
                         </div>
-                        <button type='submit' className='px-[48px] py-[10px] mt-4 bg-main_color text-white font-semibold sm:text-[20px] text-xl rounded-[5px]'>Sign Up</button>
+                        <button type='submit' className='px-[48px] py-[10px] mt-4 bg-main_color text-white font-semibold sm:text-[20px] text-xl rounded-[5px]'>Log In</button>
                         <div className="item flex items-center gap-[5px]">
                             <input type="checkbox" className='' id='check' />
                             <label htmlFor="check" className="font-semibold text-[#b3b3b3] text-sm">Remember me</label>

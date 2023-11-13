@@ -14,12 +14,12 @@
     font-weight: 600;
 }
 #regform label.active, #login-form label.active{
-    @apply text-sm top-0 cursor-default;
+    @apply top-0 text-sm cursor-default;
 }
 
-@media screen and (min-width: 1440px){
+@media screen and (min-width: 1550px){
     .desktop-width{
-        max-width: 1440px;
+        max-width: 1550px;
         width: 100%;
         margin: 0 auto;
     }

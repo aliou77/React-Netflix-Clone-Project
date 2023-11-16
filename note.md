@@ -80,6 +80,12 @@ When we initialize useRef we set the initial value: useRef(0). We can access the
 - link to an element to increment the number (0) each time it is called or executed.
 
 ------------------------------------------------------------------
+## Functions
+# React.memo
+memo lets you skip re-rendering a component when its props are unchanged. 
+Permet d'eviter de faire un rendu du component s'il n'a subit aucun changement.
+
+------------------------------------------------------------------
 # REDUX TOOLKIT
 est un environement dans le quel nous allons stocker nos donnees, pour pouvoir les acceder partout dans notre application, Redux est generalement utiliser dans les framwork comme <React>.
 

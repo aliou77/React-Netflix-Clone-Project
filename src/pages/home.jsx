@@ -9,7 +9,7 @@ import { FaPlay } from 'react-icons/fa6'
 import { AiOutlineInfoCircle } from 'react-icons/ai'
 import Footer from '../components/Footer';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMovies, fetchGenres } from '../store';
+import { fetchMovies, fetchGenres, fetchMoviesByGenre } from '../store';
 import Slider from '../components/Slider';
 
 
@@ -22,6 +22,8 @@ const Home = () => {
     
     useEffect(() => {
         dispatch(fetchGenres())
+        // trigger the function when page load completes, to avoid undefined behavior in Slider.jsx
+        dispatch(fetchMoviesByGenre({genre: "action", type: "movie"}))
     }, [])
 
     useEffect(() => {

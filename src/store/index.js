@@ -23,7 +23,6 @@ export const fetchGenres = createAsyncThunk('netflix/genres', async () => {
 })
 
 const createArrayFormRawData = async (results, moviesArray, genres) => {
-
     results.forEach((movie) => {
         const movieGenres = []
         movie.genre_ids.forEach((genre) => {
@@ -39,6 +38,7 @@ const createArrayFormRawData = async (results, moviesArray, genres) => {
             })
         }
     })
+    // console.log();
 }
 
 const getRawData = async (api, { genres }, pagging) => {
@@ -50,9 +50,21 @@ const getRawData = async (api, { genres }, pagging) => {
     return moviesArray;
 }
 
+/**
+ * fetch a list of movies form the API
+ */
 export const fetchMovies = createAsyncThunk('netflix/trending', async ({ type }, thunkApi) => {
     const { netflix: genres } = thunkApi.getState()
-    return getRawData(`${TMDB_BASE_URL}/trending/${type}/week?language=en-US`, genres, true)
+    return getRawData(`${TMDB_BASE_URL}/trending/${type}/week?api_key=${API_KEY}`, genres, true)
+
+})
+
+/**
+ * fetch movies by genre from the API
+ */
+export const fetchMoviesByGenre = createAsyncThunk('netflix/moviesByGenre', async ({genre, type }, thunkApi) => {
+    const { netflix: genres } = thunkApi.getState()
+    return getRawData(`${TMDB_BASE_URL}/discover/${type}?api_key=${API_KEY}&with_genres=${genre}`, genres)
 
 })
 
@@ -68,6 +80,10 @@ const netflixSlice = createSlice({
             // console.log(state.genres);
         });
         builder.addCase(fetchMovies.fulfilled, (state, action) => {
+            state.movies = action.payload
+            // console.log(state.genres);
+        });
+        builder.addCase(fetchMoviesByGenre.fulfilled, (state, action) => {
             state.movies = action.payload
             // console.log(state.genres);
         });

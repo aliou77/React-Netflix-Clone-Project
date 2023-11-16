@@ -1,7 +1,10 @@
 import React from 'react';
 import CardSlider from './CardSlider';
+import { useDispatch } from 'react-redux';
+import { fetchMoviesByGenre } from '../store';
 
 const Slider = ({movies}) => {
+    // console.log(movies);
     const getMoviesFromRange = (from, to)=>{
         return movies.slice(from, to)
     }

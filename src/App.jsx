@@ -5,6 +5,7 @@ import Signup from './pages/Signup';
 import Home from './pages/home';
 import RegForm from './pages/RegForm';
 import Player from './pages/Player';
+import Movies from './pages/Movies';
 
 const App = () => {
     return (
@@ -12,6 +13,7 @@ const App = () => {
             <Routes>
                 <Route exact path='/' element={<Home />} />
                 <Route exact path='/player' element={<Player />} />
+                <Route exact path='/movies' element={<Movies />} />
                 <Route exact path='/login' element={<Login />} />
                 <Route exact path='/signup' element={<Signup />} />
                 <Route exact path='/signup/regform' element={<RegForm />} />

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import Video from './Video';
@@ -6,7 +6,9 @@ import { IoPlayCircleSharp } from 'react-icons/io5';
 import { RiThumbUpFill, RiThumbDownFill } from 'react-icons/ri';
 import { BsCheck, BsChevronDown, BsHeart } from 'react-icons/bs';
 
-const Card = ({movieData, isLIked = false}) => {
+// memo evite que le composant sois rendu a chque modif du DOM ex: lorsque le cursor entre ou ressor du slider
+export default memo(
+function Card({movieData, isLIked = false}){
     const [isHovered, setIsHovered] = useState(false);
     const navigate = useNavigate();
     const showGenders = ()=>{
@@ -69,6 +71,7 @@ const Card = ({movieData, isLIked = false}) => {
         </Container>
     );
 }
+)
 const Container = styled.div`
     div.video-container{
         video{
@@ -97,4 +100,4 @@ const Container = styled.div`
     }
 
 `;
-export default Card;
+

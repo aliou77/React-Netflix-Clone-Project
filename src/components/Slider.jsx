@@ -1,12 +1,15 @@
 import React from 'react';
 import CardSlider from './CardSlider';
+import { useDispatch } from 'react-redux';
+import { fetchMoviesByGenre } from '../store';
 
 const Slider = ({movies}) => {
+    // console.log(movies);
     const getMoviesFromRange = (from, to)=>{
         return movies.slice(from, to)
     }
     return (
-        <div className='text-white'>
+        <div className='card-items-container text-white mb-[12rem]'>
             <CardSlider title="Trending Movies" data={getMoviesFromRange(0, 10)} />
             <CardSlider title="New Releases" data={getMoviesFromRange(10, 20)} />
             <CardSlider title="BlockBuster Movies" data={getMoviesFromRange(20, 30)} />

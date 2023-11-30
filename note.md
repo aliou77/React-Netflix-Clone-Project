@@ -73,6 +73,17 @@ les hooks est une serie de functions qui commence par <use>, utilisant une API. 
 il prend en param une function qu'il rexecute lorsqu'il ya un etat de l'application qui change
 ex: pour mon code Jquery pour le <input> et le <label> lorsque j'utilise le useNavigate() le code jQuery n'est pas rexecuter sur les autre pages pour remedier au probleme on utilise le hook <useEffect()> qui reexecute le code pour ns a chanque changement d'etat.
 # NB: il prend un 2em param qui un array qui contient les dependences: ce sont les elements que le hook va observer et qui va reexecuter la function en param lorsque ces elements change d'etat.
+---
+# HOOK useRef():
+useRef() only returns one item. It returns an Object called current.
+When we initialize useRef we set the initial value: useRef(0). We can access the count by using count.current
+- link to an element to increment the number (0) each time it is called or executed.
+
+------------------------------------------------------------------
+## Functions
+# React.memo
+memo lets you skip re-rendering a component when its props are unchanged. 
+Permet d'eviter de faire un rendu du component s'il n'a subit aucun changement.
 
 ------------------------------------------------------------------
 # REDUX TOOLKIT
@@ -82,7 +93,9 @@ est un environement dans le quel nous allons stocker nos donnees, pour pouvoir l
 
 ------------------------------------------------------------------
 ## TASKS:
-- design carousels to display movies.
+- carousel fix done
+- finish it inshAllah
+
 
 last: 1:31:38
 

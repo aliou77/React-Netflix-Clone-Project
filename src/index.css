@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: black;
+    overflow-x: hidden;
+}
+body::-moz-selection {
+    color: inherit;
+}
+body::selection {
+    color: inherit;
+    background-color: none;
+}
+body::-moz-selection {
+    background-color: none;
+}
+body::selection {
+    background-color: none;
+}
+
 .input-home{
     @apply h-[3.5rem] w-full rounded-md border border-white ps-3 bg-[#0000007d];
 }
@@ -25,6 +44,7 @@
     }
 }
 
- .bg-gradient{
+.bg-gradient{
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
-  }
+}
+

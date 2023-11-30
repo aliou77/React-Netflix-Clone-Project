@@ -84,6 +84,7 @@ est un environement dans le quel nous allons stocker nos donnees, pour pouvoir l
 ## TASKS:
 - design carousels to display movies.
 
+last: 1:31:38
 
 ------------------------------------------------------------------
 # NB: add style and animation on elements when you finished to setting up website feat MongoDB, firebase .... 

@@ -93,7 +93,7 @@ est un environement dans le quel nous allons stocker nos donnees, pour pouvoir l
 
 ------------------------------------------------------------------
 ## TASKS:
-- carousel fix done
+- finish my list page
 - finish it inshAllah
 
 
